@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Main-Class: MonthlyUserUsers
+Class-Path: libs/commons-dbutils-1.5.jar 
+Class-Path: libs/mysql-connector-java-5.1.17.jar
+Class-Path: libs/commons-beanutils-1.8.0.jar
+Class-Path: libs/commons-collections-3.1.jar
+Class-Path: libs/commons-lang-2.5.jar
+Class-Path: libs/commons-logging-1.1.1.jar
+Class-Path: libs/ezmorph-1.0.6.jar
+Class-Path: libs/json-lib-2.4-jdk15.jar
