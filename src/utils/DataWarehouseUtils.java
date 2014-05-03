@@ -15,4 +15,5 @@ public class DataWarehouseUtils {
 			+ " where product_id ="+productid+" and date_sk = " + datesk;
 		return run.query(conn, sql, newUserHandler);
 	}
+	
 }
