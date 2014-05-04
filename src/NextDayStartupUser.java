@@ -42,8 +42,7 @@ public class NextDayStartupUser {
 		}
 		
 		// 获得所有productid
-		List<ProductID> productids = ProductUtils.getProductIDList(baobiaoConn,
-				run);
+		List<ProductID> productids = ProductUtils.getProductIDList(baobiaoConn, run);
 		if (productids.size() <= 0)
 			return;
 

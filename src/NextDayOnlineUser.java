@@ -25,13 +25,14 @@ public class NextDayOnlineUser {
 
 		QueryRunner run = new QueryRunner();
 
-		int appID = 19;
+		int appID = 13;
+		int productID=1;
 
 		List<DateObject> dateLists = generateDateList(dwConn, run);
 		
 		// 将pre_phone_user_device_info
 		// 前一天的数据刷到dashreport中的pre_phone_user_device_info
-//		restoreOnlieUserUID(dashreportConn, snswebbusConn, run, DateUtils.getYesterday(), appID);
+		restoreOnlieUserUID(dashreportConn, snswebbusConn, run, DateUtils.getYesterday(), appID);
 
 		for (DateObject dateObject : dateLists) {
 			int datesk = dateObject.dateSK;
@@ -39,11 +40,10 @@ public class NextDayOnlineUser {
 			String columnNmeString = dateObject.columnString;
 			
 			//根据datesk获得当日的新增用户数
-//			Long nextDayUser = getOnlineUsersByDateSK(dashreportConn, dwConn,run, datesk, dateString, appID);
-			Long nextDayUser = 10L;
+			Long nextDayUser = getOnlineUsersByDateSK(dashreportConn, dwConn,run, datesk, dateString, appID);
 
 			// 获得每天新增用户
-			int newuserNumber = DataWarehouseUtils.getNewuserNumber(dwConn, run, datesk, appID);
+			int newuserNumber = DataWarehouseUtils.getNewuserNumber(dwConn, run, datesk, productID);
 
 			// 更新online_nexday_user
 			updateOnlineNextDayUser(dashreportConn, run, dateString, columnNmeString, newuserNumber, nextDayUser);
@@ -127,11 +127,13 @@ public class NextDayOnlineUser {
 			QueryRunner run) throws SQLException {
 		ArrayList<DateObject> dateList = new ArrayList<DateObject>();
 
-		int numbers[] = { -2, -3, -4, -5 - 6, -7, -14, -30 };
+		int numbers[] = { -2, -3, -4, -5, -6, -7, -14, -30 };
 		String columnNames[] = { "onlineusers", "3days", "4days", "5days",
 				"6days", "7days", "14days", "30days" };
 
 		for (int i = 0; i < 8; i++) {
+			int a= numbers[i];
+			System.out.println(a);
 			String dateTimeString = DateUtils.getBeforeDays(numbers[i]);
 			int datesk = DateSKUtils.getDateSK(dwConn, run, dateTimeString);
 			DateObject dateObject = new DateObject(datesk, dateTimeString,

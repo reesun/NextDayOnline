@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
-Main-Class: MonthlyUserUsers
+Main-Class: NextDayOnlineUser
 Class-Path: libs/commons-dbutils-1.5.jar 
 Class-Path: libs/mysql-connector-java-5.1.17.jar
 Class-Path: libs/commons-beanutils-1.8.0.jar
