@@ -48,6 +48,10 @@ public class NextDayOnlineUser {
 			// 更新online_nexday_user
 			updateOnlineNextDayUser(dashreportConn, run, dateString, columnNmeString, newuserNumber, nextDayUser);
 		}
+		
+		snswebbusConn.close();
+		dashreportConn.close();
+		dwConn.close();
 	}
 
 	/**
