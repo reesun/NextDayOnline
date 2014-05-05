@@ -15,6 +15,7 @@ import beans.ProductID;
 
 public class NextDayStartupUser {
 	public static void main(String[] args) throws Exception {
+		System.out.println("in NextDayStartupUser");
 		// Connection snswebbusConn =
 		// DBHandler.getConnection("conf/snswebbus.properties");
 		Connection baobiaoConn = DBHandler
