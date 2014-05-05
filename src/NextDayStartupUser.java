@@ -152,7 +152,7 @@ public class NextDayStartupUser {
 			// 第七日
 			newuserNumber = DataWarehouseUtils.getNewuserNumber(dwConn, run,
 					sevenDateSK, pid);
-			long sevenDaysStartup = getStartUpUser(dwConn, run, sixDateSK,
+			long sevenDaysStartup = getStartUpUser(dwConn, run, sevenDateSK,
 					startupDateSK, pid);
 
 			sql = "select count(1) from razor_fact_nexday_startup where datetime = '"
@@ -197,11 +197,11 @@ public class NextDayStartupUser {
 					monthDateSK, startupDateSK, pid);
 
 			sql = "select count(1) from razor_fact_nexday_startup where datetime = '"
-					+ monthDateSK + "' and productid = " + pid;
+					+ monthDay + "' and productid = " + pid;
 			if (GetOnItem.getCount(dwConn, run, sql) > 0) {
 				sql = "update razor_fact_nexday_startup set newusers = "
-						+ newuserNumber + ", 30days = " + fourteenDaysStartup
-						+ " where datetime = '" + fourteenDay
+						+ newuserNumber + ", 30days = " + monthDaysStartup
+						+ " where datetime = '" + monthDay
 						+ "' and productid = " + pid;
 				run.update(dwConn, sql);
 			} else {
