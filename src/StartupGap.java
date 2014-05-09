@@ -113,7 +113,7 @@ public class StartupGap {
 				}
 			}
 			
-			sql = "insert into  razor_sum_startup_gap(endTime, onstart, hour, 1day, 2day, 3day, 4day, 5day, 6day, 7day, 14day, 30day, product_id)" +
+			sql = "insert into  razor_sum_startup_gap(endTime, onestart, hour, 1day, 2day, 3day, 4day, 5day, 6day, 7day, 14day, 30day, product_id)" +
 					" values(?,?,?,?,?,?,?,?,?,?,?,?,?)";
 			run.update(dwConn, sql, dateString, oneStart.toString(), hour.toString(), 
 					day1, day2, day3, day4, day5, day6, day7, day14, day30, prodcutid);
