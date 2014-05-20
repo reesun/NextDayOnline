@@ -105,7 +105,7 @@ public class StartupGap {
 					case 14:
 						day14 += 1;
 						break;
-					case 30:
+					case 29:
 						day30 += 1;
 						break;
 
