@@ -127,8 +127,8 @@ public class NextDayStartupUser {
 				run.update(dwConn, sql);
 			} else {
 				// 次日活跃
-				sql = "insert into razor_fact_nexday_startup (datetime,newusers, nextdaystartup, 5days, productid) values (?,?,?,?,?)";
-				run.update(dwConn, sql, fiveDay, newuserNumber, starupNum, fiveDaysStartup, pid);
+				sql = "insert into razor_fact_nexday_startup (datetime,newusers, 5days, productid) values (?,?,?,?)";
+				run.update(dwConn, sql, fiveDay, newuserNumber, fiveDaysStartup, pid);
 			}
 
 			// 第六日
