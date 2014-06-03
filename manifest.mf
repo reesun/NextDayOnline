@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
-Main-Class: StartupGap
+Main-Class: RegionByEndTime
 Class-Path: libs/commons-dbutils-1.5.jar libs/mysql-connector-java-5.1.17.jar 
   libs/commons-beanutils-1.8.0.jar libs/commons-collections-3.1.jar libs/commons-lang-2.5.jar 
   libs/commons-logging-1.1.1.jar libs/ezmorph-1.0.6.jar libs/json-lib-2.4-jdk15.jar
